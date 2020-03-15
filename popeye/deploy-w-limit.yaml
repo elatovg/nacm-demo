@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: shell
+  labels:
+    app: shell
+spec:
+  selector:
+    matchLabels:
+      app: shell
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: shell
+    spec:
+      containers:
+      - name: shell
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "50Mi"
+        image: gcr.io/google-containers/busybox
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 10;done"]

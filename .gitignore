@@ -1,0 +1,12 @@
+terraform.tfplan
+terraform.tfstate*
+.terraform/
+./*.tfstate
+*.backup
+*~
+.*.swp
+.idea
+.vscode/
+*.iml
+*.test
+*.iml
