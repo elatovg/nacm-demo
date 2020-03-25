@@ -3,7 +3,7 @@
   gather_facts: false
 
   tasks:
-    - name: Create a k8s namespace.
+    - name: Delete a k8s namespace.
       k8s:
         src: ./k8s/namespace.yaml
         state: absent
